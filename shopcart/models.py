@@ -82,9 +82,9 @@ class Paidorder(models.Model):
 class Ship(models.Model):
     user= models.ForeignKey(User, on_delete=models.CASCADE)
     meal= models.ForeignKey(Meal, on_delete=models.CASCADE,blank=True, null=True)
-    ordr_no= models.CharField(max_length=50)
+    ordr_no= models.CharField(max_length=36, blank=True, null=True)
     itm_paid= models.BooleanField(default=False)
-    phone= models.IntegerField(blank=True, null=True)
+    phone= models.CharField(max_length=20,blank=True, null=True)
     total= models.FloatField()
     address= models.CharField(max_length=50,blank=True, null=True)
     state= models.CharField(max_length=50,blank=True, null=True)

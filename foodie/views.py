@@ -382,7 +382,7 @@ def paidorder(request):
 
             ship =Ship()
             ship.user = user
-            ship.total = total
+            ship.total = total/100
             ship.phone = phone
             ship.state = state
             ship.address = address
