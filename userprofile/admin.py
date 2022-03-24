@@ -12,6 +12,6 @@ admin.site.register(UContact, UContactAdmin)
 
 
 class UProfileAdmin(admin.ModelAdmin):
-    list_display = ('user','first_name','last_name','email','phone', 'address','state','image')
+    list_display = ('cart_code','user','first_name','last_name','email','phone', 'address','state','image')
 
 admin.site.register(UProfile, UProfileAdmin)
