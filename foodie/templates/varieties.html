@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+
+<!-- title -->
+{% block title %} | Home|Varieties {{ vare.name|title }}{% endblock title %}
+
+<!-- header section -->
+{% block header %}
+  {% include "heder.html" %}
+{% endblock header %}
+
+
+
+<!-- content -->
+{% block content %}
+    <div class="container-fluid text-center vary h-100 bg-white">
+        <p><a href=""></a></p>
+        <h1 class="f" style="color: #5fdec4;"><b> Food Varieties</b></h1>
+        <i class="fas fa-circle" style="color: #5fdec4;"></i><br><br>
+        <h3  class="f" style="color: #5fdec4;"><strong>{{ vare.name|title }}</strong></h3>
+        <div class="row back2">
+
+        
+            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 "></div> -->
+        {% if varre %}
+            {% for item in varre %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 ">
+                <div class="card  w-100 text-center" style="background: #5fdec4;">
+                    <img src="{{item.image.url}}" class="card-img-top m" style="height: 30vh;">
+                    <div class="card-body text-center  w-100">
+                        <h5 class="card-title mb-3 text-white text-center font-weight-bolder">Meal: {{item.meal|title}}</h5>
+                        <p class="card-text  text-success text-center">
+                        {% if item.discount %}
+                            <del>{{item.price|floatformat:2|intcomma}}</del>
+                            <span>{{item.discount|floatformat:2|intcomma}}</span>
+                        {% else %}
+                            <span>{{item.price|floatformat:2|intcomma}}</span>
+                        {% endif %}
+                        </p>
+                        <p class="card-text mb-4 text-success text-center">{{item.menu}}</p>
+                        <!-- <p class="card-text mb-4 text-success text-center"></p> -->
+                        <a href="{% url 'meals' %}" class="btn btn-outline-success w-50 mx-auto mb-5">Add To Cart</a>
+                            
+                    </div>
+                </div>
+            </div>
+              
+            {% endfor %}
+            
+        {% endif %}
+            
+        </div>
+    </div>
+            
+ 
+{% endblock content %}
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}

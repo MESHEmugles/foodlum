@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+
+
+
+{% load static %}
+{% load humanize %}
+
+
+<!-- title section -->
+{% block title %} | Home{% endblock title %}
+
+<!-- header section -->
+{% block header %}
+  {% include "heder.html" %}
+{% endblock header %}
+
+
+
+<!-- banner section -->
+{% block banner %} 
+{% include 'banner.html' %}
+
+
+{% endblock banner %}
+
+
+<!-- this is done because we are filtering each meals out.. so anytime filtering want to be done u have to uae iteration -->
+
+{% block content %}
+    <div class="container-fluid  text-center bg-white">
+        <h1 class="v" style="color: #5fdec4;"><strong>Meal Variety</strong></h1>
+        <i class="fas fa-circle" style="color: #5fdec4;"></i>
+        <div class="row">
+            
+            
+            {% if variety  %}
+                {% for varr in variety %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 ">
+                        <div class="card  w-100" style="background: #5fdec4;">
+                            <img src="{{varr.image.url}}" class="card-img-top mb-4" style="height: 30vh;">
+                            <div class="card-body text-center mb-4">
+                                <h5 class="card-title mb-3 text-white text-center font-weight-bolder">Meal: {{varr.name| title }}</h5>
+                                <p class="card-text mb-4 text-success text-center">
+                                {% if varr.discount %}
+                                    <del>{{varr.price |floatformat:2|intcomma}}</del>
+                                    <span>{{varr.discount |floatformat:2|intcomma}}</span>
+                                {% else %}
+                                    <span>{{varr.price |floatformat:2|intcomma}}</span>
+                                {% endif %}
+                                </p>
+                                <a href="{% url 'varieties' varr.id varr.slug %}" class="btn btn-outline-success w-50 mx-auto mb-5" style="border: 1px solid #038d5f">View More</a>
+
+                                    
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% endfor %}
+                
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+
+    <div class="container-fluid text-center bg-white">
+        <h1 class="" style="color: #5fdec4;"><strong>BreakFast Meal</strong></h1>
+        <i class="fas fa-circle" style="color: #5fdec4;"></i>
+        <div class="row">
+            
+            
+            {% if breakfast  %}
+                {% for food in breakfast %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 ">
+                        <div class="card  w-100" style="background: #5fdec4;">
+                            <img src="{{food.image.url}}" class="card-img-top mb-4" style="height: 30vh;">
+                            <div class="card-body text-center mb-4">
+                                <h5 class="card-title mb-3 text-white text-center font-weight-bolder">Meal: {{food.meal| title }}</h5>
+                                <p class="card-text mb-4 text-success text-center">
+                                {% if food.discount %}
+                                    <del>{{food.price |floatformat:2|intcomma}}</del>
+                                    <span>{{food.discount |floatformat:2|intcomma}}</span>
+                                {% else %}
+                                    <span>{{food.price |floatformat:2|intcomma}}</span>
+                                {% endif %}
+                                </p>
+                                <a href="{% url 'meals' %}" class="btn btn-outline-success w-50 mx-auto mb-5" style="border: 1px solid #038d5f">View More</a>
+
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+
+
+    <div class="container-fluid text-center bg-white">
+        <h1 class="" style="color: #5fdec4;"><strong> Lunch Meal </strong></h1>
+        <i class="fas fa-circle" style="color: #5fdec4;"></i>
+        <div class="row">
+            
+            
+            {% if lunch  %}
+                {% for foodi in lunch %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 ">
+                        <div class="card  w-100" style="background: #5fdec4;">
+                            <img src="{{foodi.image.url}}" class="card-img-top mb-4" style="height: 30vh;">
+                            <div class="card-body text-center mb-4">
+                                <h5 class="card-title mb-3 text-white text-center font-weight-bolder">Meal: {{foodi.meal|title}}</h5>
+                                <p class="card-text mb-4 text-success text-center">
+                                {% if foodi.discount %}
+                                    <del>{{foodi.price|floatformat:2|intcomma}}</del>
+                                    <span>{{foodi.discount|floatformat:2|intcomma}}</span>
+                                {% else %}
+                                    <span>{{foodi.price|floatformat:2|intcomma}}</span>
+                                {% endif %}
+                                </p>
+                                <a href="{% url 'meals'  %}" class="btn btn-outline-success w-50 mx-auto mb-5" style="border: 1px solid #038d5f">View More</a>
+
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                
+            {% endif %}
+        </div>
+        <hr>
+    </div>
+
+
+    <div class="container-fluid text-center bg-white">
+        <h1 class="" style="color: #5fdec4;"><strong> Dinner Meal</strong></h1>
+        <i class="fas fa-circle" style="color: #5fdec4;"></i>
+        <div class="row">
+            {% if dinner  %}
+                {% for foodie in dinner %}
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 w-25 pb-5 ">
+                        <div class="card  w-100" style="background: #5fdec4;">
+                            <img src="{{foodie.image.url}}" class="card-img-top mb-4" style="height: 30vh;">
+                            <div class="card-body text-center mb-4">
+                                <h5 class="card-title mb-3 text-white text-center font-weight-bolder">Meal: {{foodie.meal|title}}</h5>
+                                <p class="card-text mb-4 text-success text-center">
+                                {% if foodie.discount %}
+                                    <del>{{foodie.price|floatformat:2|intcomma}}</del>
+                                    <span>{{foodie.discount|floatformat:2|intcomma}}</span>
+                                {% else %}
+                                    <span>{{foodie.price|floatformat:2|intcomma}}</span>
+                                {% endif %}
+                                </p>
+                                <a href="{% url 'meals' %}" class="btn btn-outline-success w-50 mx-auto mb-5" style="border: 1px solid #038d5f">View More</a>
+
+                                    
+                            </div>
+                        </div>
+                    </div>
+                
+                {% endfor %}
+                
+            {% endif %}
+        </div>
+    </div>
+            
+ 
+{% endblock content %}
+
+
+
+{% block prefoot %}
+    {% include 'prefoot.html' %}
+{% endblock prefoot %}

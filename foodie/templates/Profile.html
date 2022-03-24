@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+
+<!-- header section -->
+{% block header %}
+  {% include "heder.html" %}
+{% endblock header %}
+
+
+
+<!-- banner section -->
+{% block content %} 
+<div class="ii bg-whit" style="margin-bottom: -3.2rem;">
+
+  <div class="fullprofile container-fluid">
+    <div class="links container">
+      <button class="btn text-success borderless"><a href="{% url 'cart' %}" style="color: #1c644c;text-decoration: none;">Cart</a></button>  <!--linear-gradient(147deg, #0000008c 0%, #2c3e5088 74%)-->
+      <button class="btn text-success borderless"><a href="{% url 'profileupdate' %}" style="color: #1c644c;text-decoration: none;">Edit Profile</a></button>
+      <button class="btn text-success borderless"><a href="{% url 'password_recovery' %}" style="color: #1c644c;text-decoration: none;">Change Password</a></button>
+      <button class="btn text-success borderless"><a href="" style="color: #1c644c;text-decoration: none;">View Billings</a></button>
+      <button class="btn text-success borderless "><a href="#" style="color: #1c644c;text-decoration: none;">Settings</a></button>
+    </div>
+
+    <div class="container sem">
+      <div class="row semiprofile mx-auto">
+        <div class="col my-auto sme">
+          <img src="{{profile.image.url}}" class="rounded-circle rdc" width="404" height="346"> <!--width="404" height="346"-->
+        </div>
+        <div class="col col-12 col-sm-8 newrighted my-auto">
+            
+          <h4><strong>Personal Information </strong></h4> 
+          
+          <div class="col-12">
+          <small class="c .fle"><span style="color: #038d5f;"> Firstname:</span> {{profile.first_name|title}}</small>
+          </div>
+          <div class="col-12">
+          <small><span style="color: #1c644c;"> Lastname:</span> {{profile.last_name|title}}</small>
+          </div>
+          <div class="col-12">
+          <small><span style="color: #1c644c;"> Email:</span> {{profile.email|title}}</small>
+          </div>
+          <div class="col-12">
+          <small> <span style="color: #1c644c;">Telephone:</span> {{profile.phone|title}}</small>
+          </div>
+          <div class="col-12">
+          <small> <span style="color: #1c644c;">Address:</span> {{profile.address|title}}</small>
+          </div>
+          <div class="col-12">
+          <small> <span style="color: #1c644c;">City:</span> {{profile.city|title}}</small>
+          </div>
+          <div class="col-12">
+          <small><span style="color: #1c644c;">State:</span> {{profile.state|title}}</small>
+          </div>
+          <div class="col-12">
+          <small><span style="color: #1c644c;">Occupation:</span></small>
+          </div>
+            
+        </div>
+        <!-- Force next columns to break to new line at md breakpoint and up -->
+        <!-- <div class="w-100 d-none d-md-block"></div>
+    
+        <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+        <div class="col-6 col-sm-4">.col-6 .col-sm-4</div> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+
+{% block locate %}
+  
+{% endblock locate %}
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}
+
+
+
+<!-- <div class="bigfull">
+  <div class="fullpro container-fluid">
+    <h3>Foodlum</h3>
+    <p>Art Is An Expression Of Innermind Shown Through Food</p>
+  </div> -->

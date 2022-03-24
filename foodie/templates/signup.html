@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+
+{% block content %}
+<div class="login1 container-fluid" style="margin-bottom: -3.1rem;">
+    <div class="rinn">
+        <div class="row">
+            <div class="image text-center col-sm-3">
+              <h1>Foodlum</h1>
+              <h4><em> Art Is An Expression Of Innermind Shown Through Food</em></h4>
+              <div class="de">
+                  <small><strong>
+                      Designed By INK
+                  </strong></small>
+              </div>
+            </div>
+            <div class="food">
+                <a href="{% url 'index' %}" style="color: #5fdec4;text-decoration: none;"><h4><strong>FOODLUM</strong></h4></a>
+            </div>
+            <div class="loggin ml-auto pl-5 col-sm-8">
+                <div class="conainer">
+                    <div class="row">
+                        <div class="login-side mx-auto col-lg">
+                            <form action="{% url 'signup' %}" method="POST" class="">
+                            {% csrf_token %}
+                                <div class="col-12">
+                                    <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Username</label>
+                                    <input type="text" name="username" class="form-control p" placeholder="Username">
+                                </div>
+                                <div class="form-row ml-2">
+                                    <div class="col">
+                                        <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Firstname</label>
+                                        <input type="text" name="first_name" class="form-control p" placeholder="First name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Lastname</label>
+                                        <input type="text" name="last_name" class="form-control p " placeholder="Last name">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="exampleInputEmail" style="color: #038d5f;font-size: 14px">Email</label>
+                                    <input type="email" name="email" class="form-control p" placeholder="Email">
+                                </div>
+                                <div class="col-12">
+                                    <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Phone</label>
+                                    <input type="text" name="phone" class="form-control p" placeholder="Phone">  
+                                </div>
+                                <div class="form-row ml-2">
+                                    <div class="col">
+                                        <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Password</label>
+                                        <input type="password" name="password1" class="form-control p" placeholder="Password(6+ characters)">  
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleInputText" style="color: #038d5f;font-size: 14px">Confirm Password</label>
+                                        <input type="password" name="password2" class="form-control p" placeholder="Comfirm Password">  
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <label for="exampleInputEmail">Email</label> -->
+                                    <input type="hidden" name="image" id="exampleInputImage" value="profile/s.png" class="p w-100"  aria-describedby="texthelp">
+                                </div>
+                                <div class="lit1">
+                                    <button type="submit" class="btn btn-outline-success w-25 mt-2 ml-3">Submit</button>
+                                    <!-- <input type="submit" class="btn btn-primary w-75 mt-4" value="Submit"> -->
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sign-up-page mb-auto ml-5 col mt-5">
+                            <div>
+                                <h5 class="eee ml-auto" style="color: #8cf3de;">A Member ?</h5>
+                                <a href="{% url 'loggin' %}" class="btn btn-outline-success ml-3">Sign In</a> 
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+    </div>
+</div>
+
+{% comment %}
+<div class="login1">
+    <div class="semilogin text-center">
+        <div class="image" style="width: 390px;">
+            <h1>Foodlum</h1>
+            <h4><em> Art Is An Expression Of Innermind Shown Through Food</em></h4>
+            <div class="de">
+                <small><strong>
+                    Designed By INK
+                </strong></small>
+            </div>
+        </div>
+        <div class="login-side mx-auto" style="margin-top: 10px;">
+            <form action="{% url 'signup' %}" method="POST" class="" validate>
+            {% csrf_token %}
+                <div id="piy">
+                    <h2>Sign Up With Us </h2>
+                </div>
+                <br>
+                <div class="text">
+                    <!-- <label for="exampleInputText">Username</label> -->
+                    <input type="text" name="username" placeholder="Username" id="exampleInputText" class="p w-100" id="p" aria-describedby="texthelp">
+                </div>
+                <br>
+                <div class="text">
+                    <!-- <label for="exampleInputText">Firstname</label> -->
+                    <input type="text" name="first_name" placeholder="Firstname" id="exampleInputText" class="p w-100" id="p" aria-describedby="texthelp">
+                    <!-- <label for="exampleInputText">Lastname</label> -->
+                    <input type="text" name="last_name" placeholder="Lastname" id="exampleInputText" class="p w-100 ml-5" id="p" aria-describedby="texthelp">
+                </div>&ensp;
+                <div>
+                    <!-- <label for="exampleInputEmail">Email</label> -->
+                    <input type="email" name="email" placeholder="Email" id="exampleInputEmail" class="p w-100"  aria-describedby="texthelp">
+                </div>
+                <br>
+                <div>
+                    <!-- <label for="exampleInputEmail">Email</label> -->
+                    <input type="text" name="phone" placeholder="Phone" id="exampleInputPhone" class="p w-100"  aria-describedby="texthelp">
+                </div>
+                
+                <div>
+                    <!-- <label for="exampleInputEmail">Email</label> -->
+                    <input type="hidden" name="image" id="exampleInputImage" value="profile/s.png" class="p w-100"  aria-describedby="texthelp">
+                </div>
+                <br>
+                <div>
+                    <!-- <label for="exampleInputPassword1">Password</label> -->
+                    <input type="password" name="password1" placeholder="Password(6+ characters)" id="exampleInputPassword1" class="p w-100" aria-describedby="texthelp">
+                </div>
+                <div>
+                    <br>
+                    <!-- <label for="exampleInputPassword2">Comfirm Password</label> -->
+                    <input type="password" name="password2" placeholder="Comfirm Password" id="exampleInputPassword2" class="p w-100" aria-describedby="texthelp">
+                    <small></small>
+                </div>
+                <br>
+                <div validate>
+                    <input type="checkbox"  id="exampleCheck1">
+                    <small class="ll ml-2 w-25"><a href="">
+                       <span> Creating an account means you’re okay with our </span> Terms of
+                    </a></small><br>
+                    <small class="ll ml-4 w-25"><a href="">
+                        Service, Privacy Policy,<span> and our</span> default Notification Settings.
+                    </a></small>
+                </div>
+                <div class="lt">
+                    <input type="submit" class="btn btn-primary w-75 mt-4" value="Create Account">
+                </div>
+            </form>
+        </div>
+        <div class="sign-up-page">
+            <div>
+                <h5 style="color: cornflowerblue;">Already a Member ?</h5>
+                <a href="{% url 'loggin' %}" class="btn btn-info up ml-3">Sign in</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endcomment %}
+{% endblock content %}
+
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}

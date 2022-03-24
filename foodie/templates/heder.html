@@ -1,0 +1,150 @@
+{% load static %}
+{% load sample_tags %}
+
+
+<div class="topheader container-fluid" style="background: #1c644c">
+  <div class="semitop container">
+
+    <!-- <div class="dropdown dripped mt-3" style="z-index:300;margin-left: 20rem;position: fixed;top:0">
+      <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Links
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% if user.is_authenticated %}
+          <a href="{% url 'profile' %}" class="" style="text-decoration: none;color: #5fdec4;"><strong>Profile</strong></a>
+          <a href="{% url 'loggout' %}" class="" style="text-decoration: none;color: #5fdec4;"><strong><i class=" fas fa-key mt-2 ml-5"></i>Logout</strong></a>
+                      
+        {% else %}
+          <i class=" fas fa-key mt-2"></i>
+          <a href="{% url 'loggin' %}" class="" style="text-decoration: none;color: #5fdec4;"><strong>Login</strong></a>
+          <a href="{% url 'signup' %}" class="" style="text-decoration: none;color: #5fdec4;"><strong>Signup</strong></a>
+        {% endif %}
+      </div>
+    </div> -->
+    
+    <div class="lefted text-success">
+      <p><a href=""  class="" style="text-decoration: none;color: #5fdec4;">Contact Us 24/7</a></p>
+    </div>
+    
+
+
+
+    <div class="righted text-right ml-auto">
+      {% if user.is_authenticated %}
+        <button><a href="{% url 'profile' %}" class="l" style="text-decoration: none;color: #5fdec4;"><strong>Profile</strong></a></button>
+        <i class=" fas fa-key mt-2 ml-5"></i>
+        <button><a href="{% url 'loggout' %}" class="l" style="text-decoration: none;color: #5fdec4;"><strong>Logout</strong></a></button>
+        <button><a href="{% url 'cart' %}" class="o ml-5"><i class="fas fa-shopping-cart mt-2" style="text-decoration: none;color: #5fdec4;"></i>
+          {% if cartcount > 0 %}
+            <span style="text-decoration: none;color: #5fdec4;">{{cartcount}}</span>
+          {% else %}
+          0
+          {% endif %}
+        </a></button>
+                    
+      {% else %}
+        <i class=" fas fa-key mt-2"></i>
+        <button><a href="{% url 'loggin' %}" class="l" style="text-decoration: none;color: #5fdec4;"><strong>Login</strong></a></button>
+        <button><a href="{% url 'signup' %}" class="l ml-5" style="text-decoration: none;color: #5fdec4;"><strong>Signup</strong></a></button>
+      {% endif %}
+      
+      {% if user.profile.first_name %}
+        <p class="o ml-5 mt-1 bg-primary">Hi {{user.profile.first_name|title}}</p>
+      {% else %}
+      <p class="o ml-5 mt-1"><span style="color: #5fdec4;"> </span>{{user.username|title}}</p>
+      {% endif %}
+        
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background: #5fdec4;">  <!-- bg-dark-->
+  <!-- <div class="img5 text-danger">
+    <h1><strong>FOODLUM</strong></h1>
+  </div> -->
+  <a class="navbar-brand text-white" href="{% url 'index'  %}"><h1 style="text-decoration: none;" class="foodlum"><strong>FOODLUM</strong></h1></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="dropdown dripped mt-3">   <!--display: grid;z-index:300;margin-left: 13rem;position: absolute;top: 0;-->
+    <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Links
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background: #5fdec4;">
+      {% if user.is_authenticated %}
+        <a href="{% url 'profile' %}" class="" style="text-decoration: none;color: #1c644c;"><strong>Profile</strong></a>
+        <div class="dropdown-divider"></div>
+        <a href="{% url 'loggout' %}" class="" style="text-decoration: none;color: #1c644c;"><strong><i class=" fas fa-key mt-2 ml-5"></i>Logout</strong></a>
+                    
+      {% else %}
+        <i class=" fas fa-key mt-2"></i>
+        <a href="{% url 'loggin' %}" class="" style="text-decoration: none;color: #1c644c;"><strong>Login</strong></a>
+        <div class="dropdown-divider"></div>
+        <a href="{% url 'signup' %}" class="" style="text-decoration: none;color: #1c644c;"><strong>Signup</strong></a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- you can change the position of the ... by using ml(for margin left--far end) and mx for centerlizing -->
+    <ul class="navbar-nav mx-auto">
+      
+      {% if user.is_authenticated %}
+      <a href="{% url 'profile' %}" class="l"><img src="{{profile.image.url}}" class="img-square h-50 ml-2 mt-1" style="width: 30px;border-radius: 15px;"></a>
+      {% endif %}
+        
+      <li class="nav-item active">
+        <p><a class="nav-link text-white" href="{% url 'index' %}"><strong>Home </strong><span class="sr-only">(current)</span></a></p>
+      </li>
+      <!-- class name for the dropdown  -->
+      <li class="nav-item dropdown">  
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>
+          Varieties
+        </strong></a>
+        <div class="dropdown-menu bg-success" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item bg-success text-white" href="">Variety</a>              
+          <div class="dropdown-divider"></div>
+          {% if variety %}
+            {% for item in variety %}
+            <a class="dropdown-item text-white bg-success" href="{% url 'varieties' item.id item.slug %}">{{ item.name| title }}</a>              
+            <div class="dropdown-divider"></div>
+            {% endfor %}            
+          {% endif %}
+            
+          <!-- <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> -->
+        </div>
+      </li>
+      <!-- to change the name disabled we change it from the class name first -->
+      <li class="nav-item">
+        <p><a class="nav-link text-white" href="{% url 'contactus' %}" tabindex="-1" aria-disabled="true"><strong> Contact</strong></a></p>
+      </li>
+      <li class="nav-item">
+        <p><a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true"><strong> About Us</strong></a></p>
+      </li>
+    </ul>
+    <!-- seach bar code -->
+    <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'searched' %}">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" name="itemsearch" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+{% if messages %}
+  {% for item in messages %}
+    <div class="alert alert-secondary" role="alert">
+      {{item}}
+    </div>
+  {% endfor %}
+  
+{% endif %}
+  

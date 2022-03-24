@@ -1,0 +1,643 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+
+
+/* .col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;} */
+
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: Verdana, Geneva, sans-serif;
+    padding: 0;
+    margin: 0;
+    /* position: relative; */
+    box-sizing: border-box;
+}
+.navbar{
+    position: sticky;
+    z-index: 400;
+    /* background: cornflowerblue; */
+    /* background: linear-gradient(white, red); */
+    /* background: radial-gradient(cornflowerblue, gold); */
+    /* background-image: linear-gradient( blue, lightblue); */
+    /* background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+    /* background-color: aqua; */
+    /* position: sticky;
+    top: 0; */
+}
+
+/* navbar content */
+.navbar .head{
+    padding: 2% 0;
+}
+
+/* to change the navbar , u call the parent name with the child name */
+.navbar .navbar-brand img {
+    color: cornflowerblue;
+    width: 30px;
+}
+
+/* banner section */
+.banner1{
+    /* background-image: url(../img/dishes.jpg); */
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-color: #5fdec4;
+    /* background-repeat: no-repeat; */
+}
+
+/* home content */
+.b{
+    margin-top: -3%;
+}
+
+
+/* meal styling */
+
+
+.back2{
+    padding: 6% 0 0 1%; 
+    /* background-size: cover;
+    background-blend-mode: darken;
+    background-color: #5fdec4; */
+}
+/* meals content */
+
+/* varieties */
+.f{
+    color: #5fdec4;
+}
+.vary{
+    margin-top: -1%;
+    /* height: 120vh; */
+    /* background: radial-gradient(cornflowerblue, gold); */
+    /* background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%); */
+}
+
+/* prefoot styling */
+.prefoot{
+    background-image: url(../img/batter-fish.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-attachment: fixed;
+}
+.tent6 div{
+    font-size: 20px;
+}
+.prefooter1, .innerprefooter1{
+    margin-top: 50px;
+    /* background: whitesmoke; */
+}
+.prefooter1{
+    background-color: #5fdec54f;
+    height: 25rem;
+}
+.prefoot div {
+    height: 50vh;
+}
+.semifoot h1{
+    margin-top: 9%;
+}
+
+.innerprefooter1{
+    display: grid;
+    grid-template-columns: 55% 15% 25% 15%;
+    margin-left: 150px;
+}
+
+.innerprefooter1 div{
+    font-size: large;
+    margin: auto;
+}
+.tent6 h4{
+    color: #1c644c; 
+}
+.tent6 button:hover{
+    background: #5fdec4;    
+    border: 2px solid #1dcaa8;
+    color: #000000;
+}
+.tent6 button {
+    border: none;
+    width: 35px;
+    height: 5vh;
+    border: 2px solid #1c644c;
+    border-radius: 17px;
+    background-color: transparent;
+    color: #1c644c;
+}
+.img5 h1{
+    color: #1c644c;
+}
+.fat:hover{
+    /* background: #5fdec4;  */
+    color: black;
+}
+.tent6 small{
+    color: #000000;
+    font-weight: 400;
+}
+.m{
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none;
+}
+.fat{
+    font-size: 20px;
+    color: #1c644c;
+}
+/* footer */
+.foot1{
+    background-color: #1c644c; 
+}
+.row{
+    margin: 12px;
+}
+.foot, .footr{
+    color: #5fdec4;
+}
+
+/* two extra pages */
+/* two page styling */
+.login1{
+    background-position: center;
+    background: whitesmoke;
+}
+.login1 .rinn{
+    margin-top: -10px;
+}
+.image{
+    margin-left: -2rem;
+    background-size: cover;
+    height: 100vh;
+    background: #73e6cf;
+}
+.image h1{
+    position: absolute;
+    bottom: 56%;
+    right: 33%;
+    color: rgba(0, 0, 0, 0.637);
+
+}
+.image h4{
+    position: absolute;
+    bottom: 44%;
+    right: 10%;
+    color: rgba(0, 0, 0, 0.637);
+}
+.de{
+    position: absolute;
+    bottom: 0;
+}
+
+/* login or sign up area */
+.login-side{
+    margin-top: 20%;
+    font-size: 18px;
+}
+
+.sign-up-page div{
+    display: flex;
+}
+.text{
+    display: flex;
+}
+
+.ll span{
+    color: black;
+}
+.ll a{
+    text-decoration: none;
+}
+.it input{
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    border: none;
+    border-radius: 6px;
+}
+
+/* sign up only */
+.p{
+    border: 1px solid #5fdec4;
+    border-radius: 10px; 
+}
+
+/* topheader styling */
+.topheader{
+    /* background-color: black; */
+    height: 5vh;
+}
+.dripped{
+    display: none;
+}
+
+.semitop{
+    position: relative;
+}
+
+.righted{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+}
+.righted button{
+    border: none;
+    text-decoration: none;
+    background: none;
+    font-size: large;
+}
+.o, .l{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+
+/* contact page */
+.contactus{
+    background-image: url(../img/batter-fish.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* profile styling */
+.ii{
+    /* background-image: url(/img/batter-fish.jpg); */
+    background-size: cover;
+    /* background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.7); */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fullprofile{
+    background-color: #5fdec59a;
+    background-size: cover;
+    height: 120vh;
+    position: relative;
+}
+.semiprofile{
+    background-color: rgba(245, 245, 245, 0.664);
+    width: 69rem;
+    height: 85vh;
+    border-radius: 2rem;
+}
+/* .semiprofiled{
+    background-color: rgba(245, 245, 245, 0.664);
+    width: 70rem;
+    height: 85vh;
+    border-radius: 2rem;
+} */
+.semiprofile .rdc .newrighted{
+    margin-top: 10rem;
+}
+.newrighted{
+    font-size: 2rem;
+}
+.newrighted h4{
+    font-size: 2rem;
+}
+
+
+.links{
+    padding: 32px 0;
+    text-align: center;
+}
+
+
+
+/* update */
+.pe{
+    background-color: rgba(105, 105, 105, 0.062);
+    border: none;
+    height: 45px;
+    border-radius: 10px;
+    width: 490px;
+}
+.fullprofiled{
+    background-color: #5fdec59a;
+    background-size: cover;
+    height: 140vh;
+    position: relative;
+}
+
+
+
+/* cart styling */
+thead{
+    background: #5fdec4;
+}
+.tab table{
+    border:1px solid #5fdec4;
+    width: 60rem;
+}
+.cardy{
+    width: 20rem;
+    background-color: #5fdec4;
+}
+.tab1 table{
+    width: 25rem;
+    border:1px solid #5fdec4;
+}
+
+/* checkout */
+.tii{
+    margin-left: 11rem;
+}
+.zip{
+    margin-top: -10px;
+}
+
+
+/* thankyou styling */
+.thankfull{
+    background-image: url(../img/dishes.jpg);
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+
+
+
+
+
+
+@media(min-width:320px) and (max-width:767px){
+    /* head */
+    .foodlum{
+        font-size: 23px;
+    }
+    /* prefoot styling */
+    .prefooter2, .innerprefooter1{
+        margin-left: 1px;
+    }
+    .prefooter1{
+        height: 95vh;
+    }
+    .innerprefooter1{
+        display: grid;
+        grid-template-columns: repeat(2, 54%);
+        /* margin-left: 100px; */
+    }
+    .img5 h1{
+        font-size: x-large;
+    }
+
+    .tent6 hr{
+        width: 160px;
+        margin-left: -3px;
+        margin-top: 15px;
+    }
+
+    /* profile styling */
+    .sme img{
+        margin-left: 20px;
+        width: 19rem;
+        height: 35vh;
+    }
+    .fullprofile{
+        height: 90rem;
+    }
+    .sem .semiprofile{
+        height: 60rem;
+        width: 25rem;
+    }
+    .sem{
+        margin-left: -1rem;
+    }
+    .newrighted{
+        margin-top: 25px;
+        font-size: 1.5rem;
+    }
+    .newrighted h4{
+        font-size: 1.5rem;
+    }
+    .newrighte{
+        width: 20rem;
+        margin-top: 30px;
+        height: 200vh;
+    }
+    .rdd{
+        margin-top: -6rem;
+    }
+    .fullprofiled{
+        height: 180vh;
+    }
+    /* profileupdate */
+    .smallfull{
+        height: 200vh;
+    }
+
+    /* cart */
+    .tab1 table{
+        margin-top: 20px;
+    }
+    .tab2{
+        margin-top: 20px;
+    }
+    .cardy{
+        width: 20rem;
+        background-color: #5fdec4;
+    }
+    thead{
+        background: #5fdec4;
+    }
+    .tab1 table{
+        width: 25rem;
+        border:1px solid #5fdec4;
+    }
+
+    /* top header */
+    .dripped{
+        display: grid;
+        z-index:300;
+        margin-left: 12rem;
+        position: absolute;
+        top: 0;
+    }
+    .l, .fa-key{
+        display: none;
+        color: #5fdec4;
+    }
+
+    /* loggin */
+    .piy p{
+        text-align: center;
+    }
+    .image{
+        display: none;
+    }
+    .login1{
+        height: 50rem;
+    }
+    .food{
+
+    }
+    /* meal */
+    .vu{
+        display: none;
+    }
+
+    /* checkout */
+    .tii p{
+        margin-left: -4rem;
+    }
+
+    /* contactus */
+    .map{
+        margin-left: -4.3rem;
+    }
+    
+}
+@media(min-width:768px) and (max-width:1023px){
+    /* head */
+    .foodlum{
+        font-size: 30px;
+    }
+    /* prefoot styling */
+    .prefooter2, .innerprefooter1{
+        margin-left: 1px;
+    }
+    .prefooter1{
+        height: 75vh;
+    }
+    .innerprefooter1{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        /* margin-left: 100px; */
+    }
+
+    .tent6 hr{
+        width: 160px;
+        margin-left: -3px;
+        margin-top: 15px;
+    }
+
+    /* profile styling */
+    .sme img{
+        margin-left: 3rem;
+        width: 30rem;
+        height: 48vh;
+    }
+    .fullprofile{
+        height: 80rem;
+        margin-bottom: -10px;
+    }
+    .sem .semiprofile{
+        height: 60rem;
+        width: 39rem;
+    }
+    .sem{
+        margin-left: -1rem;
+    }
+    .newrighted{
+        margin-left: 50px;
+        margin-top: 20px;
+        font-size: 26px;
+    }
+    .newrighted h4{
+        margin-left: 12px;
+        font-size: 29px;
+    }
+    .newrighte{
+        margin-left: 80px;
+        margin-top: 30px;
+        height: 200vh;
+    }
+    .rdd{
+        margin-top: -6rem;
+    }
+    .fullprofiled{
+        height: 180vh;
+    }
+    /* profileupdate */
+    .smallfull{
+        height: 200vh;
+    }
+
+    /* cart */
+    .tab1 table{
+        margin-top: 20px;
+    }
+    .tab2{
+        margin-top: 20px;
+    }
+    .cardy{
+        width: 20rem;
+        background-color: #5fdec4;
+    }
+    thead{
+        background: #5fdec4;
+    }
+    .tab1 table{
+        width: 25rem;
+        border:1px solid #5fdec4;
+    }
+
+    /* top header */
+    .dripped{
+        display: grid;
+        z-index:300;
+        margin-left: 35rem;
+        position: absolute;
+        top: 0;
+    }
+    .l, .fa-key{
+        display: none;
+        color: #5fdec4;
+    }
+
+    /* loggin */
+    .piy p{
+        text-align: center;
+    }
+    .image{
+        display: none;
+    }
+    .login1{
+        height: 50rem;
+    }
+    .food{
+
+    }
+    /* meal */
+    .vu{
+        display: none;
+    }
+
+    /* checkout */
+    .tii p{
+        margin-left: -4rem;
+    }
+
+    /* contactus */
+    .map{
+        margin-left: -4.3rem;
+    }
+    
+}

@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block header %}
+  {% include 'heder.html' %}  
+{% endblock header %}
+
+{% block content %}
+<div class="ii" style="margin-bottom: -3.1rem;">
+  <div class="fullprofiled container-fluid smallfull">
+    <div class="links container">
+      <button class="btn text-success borderless"><a href="{% url 'cart' %}" style="color: #1c644c;text-decoration: none;">Cart</a></button>  <!--linear-gradient(147deg, #0000008c 0%, #2c3e5088 74%)-->
+      <button class="btn text-success borderless"><a href="{% url 'profile' %}" style="color: #1c644c;text-decoration: none;">view Profile</a></button>
+      <button class="btn text-success borderless"><a href="{% url 'password_recovery' %}" style="color: #1c644c;text-decoration: none;">Change Password</a></button>
+      <button class="btn text-success borderless"><a href="" style="color: #1c644c;text-decoration: none;">View Billings</a></button>
+      <button class="btn text-success borderless "><a href="#" style="color: #1c644c;text-decoration: none;">Settings</a></button>
+    </div>
+
+    <div class="container sem mt-5">
+      <div class="row newrighte mx-auto">
+        <div class="col my-5 sme">
+          <img src="{{load_profile.image.url}}" class="rounded-circle rdd" width="404" height="346"> 
+        </div>
+
+        <div class="col col-12 col-sm-6 newrighte my-auto">
+          <form action="{% url 'profileupdate' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{form.as_p}}
+          
+            <!-- <h4><strong>Update Your Profile </strong></h4> 
+          
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #038d5f;">Firstname</label>
+              <input type="text" name="first_name" placeholder="Firstname" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">Lastname</label>
+              <input type="text" name="last_name" placeholder="Lastname" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">Telephone</label>
+              <input type="text" name="phone" placeholder="phone" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">                        
+            </div>
+            <div class="col-12">
+              <label for="exampleInputEmail" style="color: #1c644c;">Email</label>
+              <input type="email" name="email" placeholder="Email" id="exampleInputEmail" class="pe"  aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputPassword1" style="color: #1c644c;">address</label>
+              <input type="text" name="address" placeholder="address" id="exampleInputText" class="pe " aria-describedby="texthelp">
+            </div>
+
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">City</label>
+              <input type="text" name="city" placeholder="city" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">State</label>
+              <input type="text" name="state" placeholder="state" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div> -->
+            <div class="lit1">
+              <button type="submit" class="btn btn-outline-success w-25 mt-2 ml-3">Submit</button>
+              <!-- <input type="submit" class="btn btn-primary w-75 mt-4" value="Submit"> -->
+            </div>
+            
+              
+          </form>
+        </div>
+
+
+        {% comment %}
+        <form action="{% url 'profileupdate' %}" method="POST">
+          {% csrf_token %}
+          <!-- {{form.as_p}} -->
+          <div class="col col-12 col-sm-6 newrighte my-auto">
+              
+            <h4><strong>Update Your Profile </strong></h4> 
+            
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #038d5f;">Firstname</label>
+              <input type="text" name="first_name" placeholder="Firstname" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">Lastname</label>
+              <input type="text" name="last_name" placeholder="Lastname" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">Telephone</label>
+              <input type="text" name="phone" placeholder="phone" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">                        
+            </div>
+            <div class="col-12">
+              <label for="exampleInputEmail" style="color: #1c644c;">Email</label>
+              <input type="email" name="email" placeholder="Email" id="exampleInputEmail" class="pe"  aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputPassword1" style="color: #1c644c;">address</label>
+              <input type="text" name="address" placeholder="address" id="exampleInputText" class="pe " aria-describedby="texthelp">
+            </div>
+
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">City</label>
+              <input type="text" name="city" placeholder="city" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+            <div class="col-12">
+              <label for="exampleInputText" style="color: #1c644c;">State</label>
+              <input type="text" name="state" placeholder="state" id="exampleInputText" class="pe " id="p" aria-describedby="texthelp">
+            </div>
+
+            <div class="lit1">
+              <button type="submit" class="btn btn-outline-success w-25 mt-2 ml-3">Submit</button>
+              <!-- <input type="submit" class="btn btn-primary w-75 mt-4" value="Submit"> -->
+            </div>
+            
+          </div>
+        </form>
+        {% endcomment %}
+        <!-- <form action="{% url 'profileupdate' %}" method="POST"> -->
+
+        <!-- Force next columns to break to new line at md breakpoint and up -->
+        <!-- <div class="w-100 d-none d-md-block"></div>
+    
+        <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+        <div class="col-6 col-sm-4">.col-6 .col-sm-4</div> -->
+      </div>
+    </div>
+  </div>
+</div>
+  
+{% endblock content %}
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}
+

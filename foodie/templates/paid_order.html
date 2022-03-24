@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load mathfilters %}
+
+
+{% block content %}
+
+<div class="container-fluid" style="background-position: center;height: 31vh">   <!--col-md-6 offset-md-3-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" col my-auto">
+                <h2 class="mb-2" style="color: #5fdec4;"><b>THANK YOU !</b></h2>
+                <h5
+                class="mb-2 text-success">FOR SHOPPING WITH US 🛒</h5>
+                <p><span>Thank you for your order! We take pride using only the best ingredients for the food that ends up on your table.
+                    For every order, we confidently undertake the preparation process, crafting our food with test and true recipes. We hope you will love it and come back to try our other specialties.
+                </span></p>
+                <div class="button-group mt-5 pl-3 .flex">
+                    <a href="{% url 'index' %}" class="btn btn-outline-success ">Back To Home 🏠</a>
+                    <a href="{% url 'meals' %}" class="btn btn-outline-success ">Continue Shopping 🛒</a>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+{% comment %}
+<div class="thankfull">
+    <div class="semithank container">
+        <div class="thank ml-5">
+            <h2 class="mb-2"><b>THANK YOU !</b></h2>
+            <h5
+            class="mb-2">FOR SHOPPING WITH US 🛒</h5>
+            <p><span>Thank you for your order! We take pride using only the best ingredients for the food that ends up on your table.
+                For every order, we confidently undertake the preparation process, crafting our food with test and true recipes. We hope you will love it and come back to try our other specialties.
+            </span></p>
+            <div class="button-group mt-5 pl-3 .flex">
+                <button href="#" class="buttons ">Back To Home 🏠</button>
+                <button href="#" class="buttons ">Continue Shopping 🛒</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+{% endblock content %}
+
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}

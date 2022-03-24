@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load mathfilters %}
+
+
+
+<!-- header section -->
+{% block header %}
+  {% include "heder.html" %}
+{% endblock header %}
+
+
+
+<!-- banner section -->
+{% block content %} 
+<div class="container-fluid mt-4 pt-2">
+    <div class="container">
+        <h4 class="ur text-muted mb-4"><strong>YOUR CART</strong></h4>
+        <table class="table table-border table-hover-success table-responsive col-sm tab mx-auto">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 15%;">REMOVE</th>
+                    <th scope="col"  style="width: 15%;">IMAGE</th>
+                    <th scope="col"style="width: 15%;">PRODUCT</th>
+                    <th scope="col" style="width: 15%;">PRICE</th>
+                    <th scope="col" style="width: 15%;">QUANTITY</th>
+                    <th scope="col">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% if carty %}
+            {% for items in carty %}
+                <tr>
+                    <th scope="row">
+                        <form action="{% url 'remove_item' %}" method="POST">
+                        {% csrf_token %}
+                            <input type="hidden" name="deleteitem" value="{{items.id}}">
+                            <button type="submit" class="btn borderless"> x</button>
+                        </form>
+                    </th>
+                    <th scope="row"><img src="{{items.meal.image.url}}" class="img-fluid" width="80" height="30"></th>
+                    <td>
+                        {{ items.product_name }}
+                    </td>
+                    <td>
+                        {% if items.meal.discount %}
+                        <span>{{items.meal.discount|floatformat:2|intcomma}}</span>
+                        {% else %}
+                        <span>{{items.meal.price|floatformat:2|intcomma}}</span>
+                        {% endif %}
+
+                    </td>
+                    <td>{{items.quantity}}</td>
+                    <td>
+                        {% if items.meal.discount %}
+                        <span>{{items.meal.discount|mul:items.quantity|floatformat:2|intcomma}}</span>
+                        {% else %}
+                        <span>{{items.meal.price|mul:items.quantity|floatformat:2|intcomma}}</span>
+                        {% endif %}
+
+                    </td>
+                </tr>
+                {% endfor %}
+                    
+                {% endif %}
+                <!-- <tr>
+                    <th scope="row">x</th>
+                    <th scope="row"><img src="/img/batter-fish.jpg" class="img-fluid" width="80" height="30"></th>
+                    <td>jollof rice</td>
+                    <td>$200</td>
+                    <td>2</td>
+                    <td>$200</td>
+                </tr>
+                <tr>
+                    <th scope="row">x</th>
+                    <th scope="row"><img src="/img/batter-fish.jpg" class="img-fluid" width="80" height="30"></th>
+                    <td>jollof rice</td>
+                    <td>$200</td>
+                    <td>2</td>
+                    <td>$200</td>
+                </tr> -->
+                <tr>
+                    <td colspan="2">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-success col-12" type="button" >cupon</button>
+                            </div>
+                            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td colspan=""> 
+                        <div class="reset ">
+                            <input type="reset" class="btn btn-outline-success" name="reset" id="">
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <div class="row tab2 mt-5">
+            <div class="col-8 tab1 mt-5 pt-4">
+                <caption class="">
+                    <h3>Cart Total</h3>
+                </caption>
+                <table class="table table-border table-hover table-responsive ">
+                    <tbody>
+                        <tr>
+                            <th style="width: 5%;">SUBTOTAL</th>
+                            <td class="e ml-5" style="width: 2%;">{{subtotal}}</td>
+                        </tr>
+                        <tr>
+                            <th>VAT</th>
+                            <td>{{vat}}</td>
+                        </tr>
+                        <tr>
+                            <th>TOTAL</th>
+                            <td>{{total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bt3">
+                    <a class="btn btn-outline-success col-sm-6" href="{% url 'checkout' %}" role="button">Proceed To Checkout</a> 
+                </div>
+            </div>
+        
+            <div class="col">
+                <div class="cardy1 mt-5 pt-4">
+                    <div class="cardy-write">
+                        <h3>You May Interested In...</h3>
+                    </div>
+                    
+                    {% if mean %}
+                    {% for item in mean %}
+                        <div class="card cardy">
+                            <img src="{{item.image.url}}" class="card-img-top" alt="...">
+                            <div class="card-body text-center mb-3">
+                                <h5 class="card-title">Meal: {{item.meal|title}}</h5>
+                                <p class="card-text mb-3">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a class="btn btn-outline-success w-50" href="{% url 'meals' %}" role="button">More</a>
+                            </div>
+                        </div>
+                      
+                    {% endfor %}
+                        
+                    {% endif %}
+                        
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+
+{% block locate %}
+  
+{% endblock locate %}
+
+
+
+    
+
+

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block header %}
+  {% include 'heder.html' %}
+{% endblock header %}
+
+{% block content %}
+<div class="container-fluid">
+  &nbsp;
+  <div class="piy text-center text-muted">
+    <h2><strong>Give Us Your Message </strong></h2>
+  </div>
+  &nbsp;
+  <div class="row justify-content-between">
+    <div class=" col-8 col-md-5">
+      <div class=" col map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126845.9688590749!2d3.2933165172058976!3d6.529701144648197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9228fa2a3999%3A0xd7a8324bddbba1f0!2sIkeja!5e0!3m2!1sen!2sng!4v1644915700070!5m2!1sen!2sng" width="500" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <form action="{% url 'contactus' %}" method="POST" class="">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="inputFirstname" style="color: #038d5f;">First Name</label>
+          <input type="text" name="first_name" class="form-control p" id="inputFirstname" placeholder="First name">
+        </div>
+        <div class="form-group">
+          <label for="inputLastname" style="color: #038d5f;">Lastname</label>
+          <input type="text" name="last_name" class="form-control p" id="inputLastname" placeholder="Lastname">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" style="color: #038d5f;">Email</label>
+          <input type="Email" name="email" class="form-control p" id="inputEmail" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="inputText" style="color: #038d5f;">Phone</label>
+          <input type="text" name="number" class="form-control p" id="inputText" placeholder="Phone">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1" style="color: #038d5f;">Message</label>
+          <textarea class="form-control p" name="message" id="exampleFormControlTextarea1" placeholder="message" cols="73" rows="10"></textarea>
+        </div>
+
+        <div class="">
+          <button class="btn btn-outline-success w-50 mt-2">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% comment %}
+<div class="contactus container-fluid">
+    <div class="piy text-center text-white">
+        <h2><strong>Give Us Your Message </strong></h2>
+    </div>
+    <div class="semicontact container-fluid mx-auto ">
+        <div class="map mt-5 mb-4 ml-auto">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126845.9688590749!2d3.2933165172058976!3d6.529701144648197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9228fa2a3999%3A0xd7a8324bddbba1f0!2sIkeja!5e0!3m2!1sen!2sng!4v1644915700070!5m2!1sen!2sng" width="700" height="650" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="contact ml-4 mt-5">
+            <form action="{% url 'contactus' %}" method="POST" class="">
+            {% csrf_token %}
+                <div class="text">
+                    <input type="text" name="first_name" placeholder="Firstname" id="exampleInputText" class="pe" id="p" aria-describedby="texthelp">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="last_name" placeholder="Lastname" id="exampleInputText" class="pe mr-5 pr-3" id="p" aria-describedby="texthelp">
+                </div><br>
+                <div>
+                    <input type="email" name="email" placeholder="Email" id="exampleInputEmail" class="pe"  aria-describedby="texthelp">
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="number" placeholder="phone number" id="exampleInputText" class="pe" aria-describedby="texthelp">
+                </div>
+                <br>
+                <div>
+                    <textarea name="message" id="" class="r bg-transparent" placeholder="message" cols="73" rows="16"></textarea>
+                </div>
+                <div class="lit">
+                    <button class="btn btn-outline-success w-50 mt-4" style="border: none;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+{% endblock content %}
+
+
+
+<!-- prefoot -->
+{% block prefoot %}
+    {% include 'prefoot_one.html' %}
+{% endblock prefoot %}
+
