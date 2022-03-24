@@ -380,16 +380,16 @@ def paidorder(request):
             paidorder.save()
 
 
-            ship =Ship()
-            ship.user = user
-            ship.total = total/100
-            ship.phone = phone
-            ship.state = state
-            ship.address = address
-            ship.ordr_no = order_num
-            ship.itm_paid =True
-            ship.name_on_crd = user.first_name
-            ship.save()
+            # ship =Ship()
+            # ship.user = user
+            # ship.total = total/100
+            # ship.phone = phone
+            # ship.state = state
+            # ship.address = address
+            # ship.ordr_no = order_num
+            # ship.itm_paid =True
+            # ship.name_on_crd = user.first_name
+            # ship.save()
             return redirect(rd_url)
         # call to paystack done, when transaction is successfull it redirects to the callback page
         # if transaction error occurs it rdirect us to the checkout
