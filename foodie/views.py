@@ -340,7 +340,7 @@ def paidorder(request):
         # cburl
         api_key= 'sk_test_371cb1fe66df8f063548bf77f615d1a8c2411f24'
         curl= 'https://api.paystack.co/transaction/initialize'
-        cburl = 'http://3.142.225.0/paid_order'
+        cburl = 'http://3.142.225.0/paid_order/'
         # cburl = 'http://localhost:2000/paid_order'
         ref_num = str(uuid.uuid4())
         total= float(request.POST['get_total']) * 100
